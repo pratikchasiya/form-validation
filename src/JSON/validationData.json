@@ -1,0 +1,141 @@
+
+[
+    {
+        "name" : "fname",
+        "conditions" : [
+            {
+                "condition" : " !obj.fname || obj.fname == '' ",
+                "error" : "First Name is requiered"
+            },
+            {
+                "condition" : "obj.fname && !letters.test(obj.fname) ",
+                "error" : "First name contains only alphabets"
+            }
+        ]
+    },
+
+    {
+        "name" : "lname",
+        "conditions" : [
+            {
+                "condition" : " !obj.lname || obj.lname == '' ",
+                "error" : "Last Name is requiered"
+            },
+            {
+                "condition" : "obj.lname && !letters.test(obj.lname) ",
+                "error" : "Last name contains only alphabets"
+            }
+        ]
+    },
+
+    {
+        "name" : "email",
+        "conditions" : [
+            {
+                "condition" : " !obj.email || obj.email == '' ",
+                "error" : "Email is requiered"
+            },
+            {
+                "condition" : "obj.email && ((!obj.email.includes('@gmail.com') && !obj.email.includes('@outlook.com'))) ",
+                "error" : "Email is not valid"
+            }
+        ]
+    },
+
+    {
+        "name" : "phone",
+        "conditions" : [
+            {
+                "condition" : " !obj.phone || obj.phone == '' ",
+                "error" : "Mobile No is requiered"
+            },
+            {
+                "condition" : "(obj.phone < 0) || (obj.phone.length != 10) ",
+                "error" : "Mobile No is not valid"
+            }
+        ]
+    },
+
+    {
+        "name" : "date",
+        "conditions" : [
+            {
+                "condition" : " !obj.date || obj.date == '' ",
+                "error" : "Date is requiered"
+            },
+            {
+                "condition" : "!isDate18orMoreYearsOld(new Date(obj.date).getDate(), new Date(obj.date).getMonth(), new Date(obj.date).getFullYear()) ",
+                "error" : "Date must be 18+"
+            }
+        ]
+    },
+
+    {
+        "name" : "password",
+        "conditions" : [
+            {
+              "condition" :"!obj.password || obj.password == '' ",
+               "error" :  "Password is requiered"   
+            },
+            {
+                "condition" : "(obj.confirmPassword != obj.confirmPassword) && (obj.confirmPassword != '') ",
+                "error" : "Password and Confirm Password must be same.",
+               " otherField" : "confirmPassword"
+            },
+            {
+                "condition" : "(obj.confirmPassword == obj.confirmPassword) && (obj.confirmPassword != '') ",
+                "error" : "",
+               "otherField" : "confirmPassword"
+            }
+        ]
+    },
+
+    {
+        "name" : "confirmPassword",
+        "conditions" : [ 
+            {
+                "condition" :"!obj.confirmPassword || obj.confirmPassword == '' ",
+                 "error" :  "Confirm Password is requiered"
+                       
+              },
+            {
+                "condition" : "(obj.password != obj.confirmPassword) && (obj.confirmPassword != '') ",
+                "error" : "Password and Confirm Password must be same."
+            }
+        ]
+    },
+
+    {
+        "name" : "gender",
+        "conditions" : [
+            {
+                "condition" : " !obj.gender || obj.gender == '' ",
+                "error" : "Gender is requiered"
+            }
+        ]
+    },
+
+    {
+        "name" : "hobbies",
+        "conditions" : [
+            {
+                "condition" : " !obj.hobbies || obj.hobbies == '' ",
+                "error" : "Hobbies is requiered"
+            },
+            {
+                "condition" : "(obj.hobbies.length < 3 ) ",
+                "error" : "Please Select any 3"
+            }
+        ]
+    },
+
+    {
+        "name" : "information",
+        "conditions" : [
+            {
+                "condition" : " !obj.information || obj.information == '' ",
+                "error" : "Information is requiered"
+            }
+        ]
+    }
+]
